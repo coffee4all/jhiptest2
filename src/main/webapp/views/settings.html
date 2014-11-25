@@ -1,0 +1,226 @@
+<div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 translate="settings.title" translate-values="{username: '{{account.login}}'}">User settings for [<b>{{settingsAccount.login}}</b>]</h2>
+
+            <div class="alert alert-success" ng-show="success" translate="settings.messages.success">
+                <strong>Settings saved!</strong>
+            </div>
+            <div class="alert alert-danger" ng-show="error" translate="settings.messages.error">
+                <strong>An error has occurred!</strong> Settings could not be saved.
+            </div>
+
+            <form name="form" role="form" novalidate ng-submit="save()" show-validation>
+
+                <div class="form-group">
+                    <label translate="settings.form.firstname">First Name</label>
+                    <input type="text" class="form-control" name="firstName" placeholder="{{'settings.form.firstname.placeholder' | translate}}"
+                           ng-model="settingsAccount.firstName" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                    <div ng-show="form.firstName.$dirty && form.firstName.$invalid">
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.required" translate="settings.messages.validate.firstname.required">
+                            Your first name is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.minlength" translate="settings.messages.validate.firstname.minlength">
+                            Your first name is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.maxlength" translate="settings.messages.validate.firstname.maxlength">
+                            Your first name cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label translate="settings.form.lastname">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" placeholder="{{'settings.form.lastname.placeholder' | translate}}"
+                           ng-model="settingsAccount.lastName" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                    <div ng-show="form.lastName.$dirty && form.lastName.$invalid">
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.required" translate="settings.messages.validate.lastname.required">
+                            Your last name is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.minlength" translate="settings.messages.validate.lastname.minlength">
+                            Your last name is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.maxlength" translate="settings.messages.validate.lastname.maxlength">
+                            Your last name cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label translate="global.form.email">E-mail</label>
+                    <input type="email" class="form-control" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
+                           ng-model="settingsAccount.email" ng-minlength=5 ng-maxlength=100 required maxlength="100">
+                    <div ng-show="form.email.$dirty && form.email.$invalid">
+                        <p class="help-block"
+                               ng-show="form.email.$error.required" translate="global.messages.validate.email.required">
+                            Your e-mail is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.email.$error.email" translate="global.messages.validate.email.invalid">
+                            Your e-mail is invalid.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.email.$error.minlength" translate="global.messages.validate.email.minlength">
+                            Your e-mail is required to be at least 5 characters
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.email.$error.maxlength" translate="global.messages.validate.email.maxlength">
+                            Your e-mail cannot be longer than 100 characters
+                        </p>
+                    </div>
+                </div>
+                
+                
+                
+                
+                 
+				<br/>
+            	<h1 translate="register.companie.title">Companie</h1>
+                
+                
+                <div class="form-group">
+                    <label translate="global.form.company.nume">Nume companie</label>
+                    <input type="text" class="form-control" name="company.nume" placeholder="{{'global.form.company.nume.placeholder' | translate}}"
+                           ng-model="settingsAccount.company.nume" ng-minlength=1 ng-maxlength=50>
+                    <div ng-show="form.company.nume.$dirty && form.company.nume.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.nume.$error.required" translate="register.messages.validate.company.nume.required">
+                            Nume companie is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.nume.$error.minlength" translate="register.messages.validate.company.nume.minlength">
+                            Your nume companie is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.nume.$error.maxlength" translate="register.messages.validate.company.nume.maxlength">
+                            Your nume companie cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label translate="global.form.company.cui">CUI</label>
+                    <input type="text" class="form-control" name="company.cui" placeholder="{{'global.form.company.cui.placeholder' | translate}}"
+                           ng-model="settingsAccount.company.cui" ng-minlength=1 ng-maxlength=50>
+                    <div ng-show="form.company.cui.$dirty && form.company.cui.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.cui.$error.required" translate="register.messages.validate.company.cui.required">
+                            Cui companie is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.cui.$error.minlength" translate="register.messages.validate.company.cui.minlength">
+                            Your cui companie is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.cui.$error.maxlength" translate="register.messages.validate.company.cui.maxlength">
+                            Your cui companie cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label translate="global.form.company.adresa">Adresa</label>
+                    <input type="text" class="form-control" name="company.adresa" placeholder="{{'global.form.company.adresa.placeholder' | translate}}"
+                           ng-model="settingsAccount.company.adresa" ng-minlength=1 ng-maxlength=50>
+                    <div ng-show="form.company.adresa.$dirty && form.company.adresa.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.adresa.$error.required" translate="register.messages.validate.company.adresa.required">
+                            adresa companie is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.adresa.$error.minlength" translate="register.messages.validate.company.adresa.minlength">
+                            Your adresa companie is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.adresa.$error.maxlength" translate="register.messages.validate.company.adresa.maxlength">
+                            Your adresa companie cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label translate="global.form.company.telefon">telefon</label>
+                    <input type="text" class="form-control" name="company.telefon" placeholder="{{'global.form.company.telefon.placeholder' | translate}}"
+                           ng-model="settingsAccount.company.telefon" ng-minlength=1 ng-maxlength=50>
+                    <div ng-show="form.company.telefon.$dirty && form.company.telefon.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.telefon.$error.required" translate="register.messages.validate.company.telefon.required">
+                            telefon companie is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.telefon.$error.minlength" translate="register.messages.validate.company.telefon.minlength">
+                            Your telefon companie is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.telefon.$error.maxlength" translate="register.messages.validate.company.telefon.maxlength">
+                            Your telefon companie cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label translate="global.form.company.email">email</label>
+                    <input type="text" class="form-control" name="company.email" placeholder="{{'global.form.company.email.placeholder' | translate}}"
+                           ng-model="settingsAccount.company.email" ng-minlength=1 ng-maxlength=50>
+                    <div ng-show="form.company.email.$dirty && form.company.email.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.email.$error.required" translate="register.messages.validate.company.email.required">
+                            email companie is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.email.$error.minlength" translate="register.messages.validate.company.email.minlength">
+                            Your email companie is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.email.$error.maxlength" translate="register.messages.validate.company.email.maxlength">
+                            Your email companie cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label translate="global.form.company.website">website</label>
+                    <input type="text" class="form-control" name="company.website" placeholder="{{'global.form.company.website.placeholder' | translate}}"
+                           ng-model="settingsAccount.company.website" ng-minlength=1 ng-maxlength=50 >
+                    <div ng-show="form.company.website.$dirty && form.company.website.$invalid">
+                        <p class="help-block"
+                               ng-show="form.company.website.$error.required" translate="register.messages.validate.company.website.required">
+                            website companie is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.website.$error.minlength" translate="register.messages.validate.company.website.minlength">
+                            Your website companie is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.company.website.$error.maxlength" translate="register.messages.validate.company.website.maxlength">
+                            Your website companie cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>                
+                 
+                   
+               <div class="form-group">
+                            <label>judet</label>
+                            <select class="form-control" ng-model="settingsAccount.company.judet" 
+                            		ng-options="judet.id as judet.nume for judet in judets">
+                            </select>
+                </div>   
+ 
+                <div class="form-group">
+                            <label>activitate</label>
+                            <select class="form-control" ng-model="settingsAccount.company.activitate" 
+                            		ng-options="activitate.id as activitate.nume for activitate in activitates">
+                            </select>
+                </div>     
+                
+                
+                
+                
+                
+                
+
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="settings.form.button">Save</button>
+            </form>
+        </div>
+    </div>
+
+</div>

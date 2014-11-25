@@ -1,0 +1,126 @@
+===========Tipabonament==============
+nume (String)
+anunturi (Integer)
+companii (Integer)
+valabilitate (Integer)
+epublic (Boolean)
+-------------------
+abonament (many-to-many)
+Everything is configured, generating the entity...
+   create src\main\java\ro\quador\bizplace\domain\Tipabonament.java
+   create src\main\java\ro\quador\bizplace\repository\TipabonamentRepository.java
+   create src\main\java\ro\quador\bizplace\web\rest\TipabonamentResource.java
+   create src\main\resources\config\liquibase\changelog\20141108163453_added_entity_Tipabonament.xml
+   create src\main\webapp\views\tipabonaments.html
+   create src\main\webapp\scripts\tipabonament\router_tipabonament.js
+   create src\main\webapp\scripts\tipabonament\controller_tipabonament.js
+   create src\main\webapp\scripts\tipabonament\service_tipabonament.js
+   create src\test\java\ro\quador\bizplace\web\rest\TipabonamentResourceTest.java
+   
+   
+   
+===========Activitate==============
+nume (String)
+-------------------
+companie (one-to-many)
+Everything is configured, generating the entity...
+   create src\main\java\ro\quador\bizplace\domain\Activitate.java
+   create src\main\java\ro\quador\bizplace\repository\ActivitateRepository.java
+   create src\main\java\ro\quador\bizplace\web\rest\ActivitateResource.java
+   create src\main\resources\config\liquibase\changelog\20141107165431_added_entity_Activitate.xml
+   create src\main\webapp\views\activitates.html
+   create src\main\webapp\scripts\activitate\router_activitate.js
+   create src\main\webapp\scripts\activitate\controller_activitate.js
+   create src\main\webapp\scripts\activitate\service_activitate.js
+   create src\test\java\ro\quador\bizplace\web\rest\ActivitateResourceTest.java
+   
+   
+   
+===========Judet==============
+nume (String)
+-------------------
+companie (one-to-many)
+Everything is configured, generating the entity...
+   create src\main\java\ro\quador\bizplace\domain\Judet.java
+   create src\main\java\ro\quador\bizplace\repository\JudetRepository.java
+   create src\main\java\ro\quador\bizplace\web\rest\JudetResource.java
+   create src\main\resources\config\liquibase\changelog\20141107170723_added_entity_Judet.xml
+   create src\main\webapp\views\judets.html
+   create src\main\webapp\scripts\judet\router_judet.js
+   create src\main\webapp\scripts\judet\controller_judet.js
+   create src\main\webapp\scripts\judet\service_judet.js
+   create src\test\java\ro\quador\bizplace\web\rest\JudetResourceTest.java
+   
+
+===========Companie==============
+cui (String)
+nume (String)
+adresa (String)
+telefon (String)
+email (String)
+website (String)
+creatala (LocalDate)
+-------------------
+companie (one-to-one)
+anunt (one-to-many)
+abonament (many-to-many)
+judet (many-to-one)
+activitate (many-to-one)
+user (one-to-one)
+Everything is configured, generating the entity...
+   create src\main\java\ro\quador\bizplace\domain\Companie.java
+   create src\main\java\ro\quador\bizplace\repository\CompanieRepository.java
+   create src\main\java\ro\quador\bizplace\web\rest\CompanieResource.java
+   create src\main\resources\config\liquibase\changelog\20141108164706_added_entity_Companie.xml
+   create src\main\webapp\views\companies.html
+   create src\main\webapp\scripts\companie\router_companie.js
+   create src\main\webapp\scripts\companie\controller_companie.js
+   create src\main\webapp\scripts\companie\service_companie.js
+   create src\test\java\ro\quador\bizplace\web\rest\CompanieResourceTest.java
+   
+ 
+
+===========Anunt==============
+tip (String)
+denumire (String)
+descriere (String)
+pret (BigDecimal)
+pretredus (BigDecimal)
+um (String)
+reduceredela (LocalDate)
+reducerepanala (LocalDate)
+creatla (LocalDate)
+-------------------
+companie (many-to-one)
+Everything is configured, generating the entity...
+   create src\main\java\ro\quador\bizplace\domain\Anunt.java
+   create src\main\java\ro\quador\bizplace\repository\AnuntRepository.java
+   create src\main\java\ro\quador\bizplace\web\rest\AnuntResource.java
+   create src\main\resources\config\liquibase\changelog\20141108165019_added_entity_Anunt.xml
+   create src\main\webapp\views\anunts.html
+   create src\main\webapp\scripts\anunt\router_anunt.js
+   create src\main\webapp\scripts\anunt\controller_anunt.js
+   create src\main\webapp\scripts\anunt\service_anunt.js
+   create src\test\java\ro\quador\bizplace\web\rest\AnuntResourceTest.java
+   
+   
+===========Abonament==============
+anunturi (Integer)
+companii (Integer)
+valabilitate (Integer)
+creatla (LocalDate)
+-------------------
+companie (many-to-many)
+tipabonament (many-to-many)
+Everything is configured, generating the entity...
+   create src\main\java\ro\quador\bizplace\domain\Abonament.java
+   create src\main\java\ro\quador\bizplace\repository\AbonamentRepository.java
+   create src\main\java\ro\quador\bizplace\web\rest\AbonamentResource.java
+   create src\main\resources\config\liquibase\changelog\20141108165406_added_entity_Abonament.xml
+   create src\main\webapp\views\abonaments.html
+   create src\main\webapp\scripts\abonament\router_abonament.js
+   create src\main\webapp\scripts\abonament\controller_abonament.js
+   create src\main\webapp\scripts\abonament\service_abonament.js
+   create src\test\java\ro\quador\bizplace\web\rest\AbonamentResourceTest.java
+   
+   

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Abonament.
+    -->
+    <changeSet id="20141110225722" author="jhipster">
+        <createTable tableName="T_ABONAMENT">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="anunturi" type="integer"/>
+            <column name="companii" type="integer"/>
+            <column name="valabilitate" type="integer"/>
+            <column name="creatla" type="date"/>
+            <column name="companie_id" type="bigint"/>
+            <column name="tipabonament_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="companie_id"
+                                 baseTableName="T_ABONAMENT"
+                                 constraintName="fk_abonament_companie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_COMPANIE"/>
+        <addForeignKeyConstraint baseColumnNames="tipabonament_id"
+                                 baseTableName="T_ABONAMENT"
+                                 constraintName="fk_abonament_tipabonament_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_TIPABONAMENT"/>
+    </changeSet>
+</databaseChangeLog>

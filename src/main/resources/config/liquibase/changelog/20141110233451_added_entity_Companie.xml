@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Companie.
+    -->
+    <changeSet id="20141110233451" author="jhipster">
+        <createTable tableName="T_COMPANIE">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cui" type="varchar(255)"/>
+            <column name="nume" type="varchar(255)"/>
+            <column name="adresa" type="varchar(255)"/>
+            <column name="telefon" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
+            <column name="website" type="varchar(255)"/>
+            <column name="creatala" type="date"/>
+<!--             <column name="companie_id" type="bigint"/> -->
+            <column name="judet_id" type="bigint"/>
+            <column name="activitate_id" type="bigint"/>
+            <column name="login" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        
+<!--         <addForeignKeyConstraint baseColumnNames="companie_id"
+                                 baseTableName="T_COMPANIE"
+                                 constraintName="fk_companie_companie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_COMPANIE"/> -->
+        <addForeignKeyConstraint baseColumnNames="judet_id"
+                                 baseTableName="T_COMPANIE"
+                                 constraintName="fk_companie_judet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_JUDET"/>
+        <addForeignKeyConstraint baseColumnNames="activitate_id"
+                                 baseTableName="T_COMPANIE"
+                                 constraintName="fk_companie_activitate_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_ACTIVITATE"/>
+        <addForeignKeyConstraint baseColumnNames="login"
+                                 baseTableName="T_COMPANIE"
+                                 constraintName="fk_companie_user_login"
+                                 referencedColumnNames="login"
+                                 referencedTableName="T_USER"/>
+    </changeSet>
+</databaseChangeLog>
